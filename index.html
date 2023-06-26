@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Js Typing Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <!-- Modal -->
+    <div class="modal fade" id="regitrationModel" tabindex="-1" aria-labelledby="regitrationModelLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-center" id="regitrationModelLabel">Register Yorself</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="first_name" class="form-label">First Name</label>
+                <input name="first_name" type="text" class="form-control" id="first_name" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input name="last_name" type="text" class="form-control" id="last_name">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary a_save" onclick="saveRegistrationInfo()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container s_count">
+      <section class="s_section h-100 rounded-5 overflow-hidden">
+            <div class="row m-0 h-100">
+                <div class=" col-9 overflow-hidden h-100 p-0 px-3 pt-2" style="background-color: #D2FFD1; border-top-left-radius: 25px; border-bottom-left-radius: 25px;">
+                  <h1 class="display-6 m-0 p-2 pt-0 s_h33 overflow-hidden fw-semibold">
+                    <span style="color:#6c39e0;">asdf ;lkj</span> asdfg ;lkjh asdfg ;lkjh asdf ;lkj asdfg ;lkjh asdfg ;lkjh asdf ;lkj asdfg ;lkjh asdfg 
+                  </h1>
+                  <div class=" d-flex justify-content-center a_keyboard">
+                    <div class="s_h333">
+                      <div>
+                        <button class="btn btn-light s_btn1 a_active" style="width: 40px;">~<br>`</button>
+                        <button class="btn btn-light s_btn1 pt-0">!<br>1</button>
+                        <button class="btn btn-light s_btn1 pt-0">@<br>2</button>
+                        <button class="btn btn-light s_btn1 pt-0">#<br>3</button>
+                        <button class="btn btn-light s_btn1 pt-0">$<br>4</button>
+                        <button class="btn btn-light s_btn1 pt-0">%<br>5</button>
+                        <button class="btn btn-light s_btn1 pt-0">^<br>6</button>
+                        <button class="btn btn-light s_btn1 pt-0">&<br>7</button>
+                        <button class="btn btn-light s_btn1 pt-0">*<br>8</button>
+                        <button class="btn btn-light s_btn1 pt-0">(<br>9</button>
+                        <button class="btn btn-light s_btn1 pt-0">)<br>0</button>
+                        <button class="btn btn-light s_btn1 pt-0">_<br>-</button>
+                        <button class="btn btn-light s_btn1 pt-0">+<br>=</button>
+                        <button class="btn btn-light s_btn1 ps-1" style="width:90px; font-size: 12px;"><span><i class="fa-solid fa-arrow-left" style="color: #000000;"></i> backspace</span></button>
+                      </div>
+                      <div class="my-1">
+                        <button class="btn btn-light s_btn1" style="width:65px;">Tab</button>
+                        <button class="btn btn-light s_btn1">Q</button>
+                        <button class="btn btn-light s_btn1">W</button>
+                        <button class="btn btn-light s_btn1">E</button>
+                        <button class="btn btn-light s_btn1">R</button>
+                        <button class="btn btn-light s_btn1">T</button>
+                        <button class="btn btn-light s_btn1">Y</button>
+                        <button class="btn btn-light s_btn1">U</button>
+                        <button class="btn btn-light s_btn1">I</button>
+                        <button class="btn btn-light s_btn1">O</button>
+                        <button class="btn btn-light s_btn1">P</button>
+                        <button class="btn btn-light s_btn1 pt-0">{<br>[</button>
+                        <button class="btn btn-light s_btn1 pt-0">}<br>]</button>
+                        <button class="btn btn-light s_btn1 pt-0" style="width:65px;">|<br>\</button>
+                      </div>
+                      <div class="my-1">
+                        <button class="btn btn-light s_btn1" style="width:90px; font-size:14px;">caps lock</button>
+                        <button class="btn btn-light s_btn1">A</button>
+                        <button class="btn btn-light s_btn1">S</button>
+                        <button class="btn btn-light s_btn1">D</button>
+                        <button class="btn btn-light s_btn1">F</button>
+                        <button class="btn btn-light s_btn1">G</button>
+                        <button class="btn btn-light s_btn1">H</button>
+                        <button class="btn btn-light s_btn1">J</button>
+                        <button class="btn btn-light s_btn1">K</button>
+                        <button class="btn btn-light s_btn1">L</button>
+                        <button class="btn btn-light s_btn1 pt-0">:<br>;</button>
+                        <button class="btn btn-light s_btn1 pt-0">"<br>'</button>
+                        <button class="btn btn-light s_btn1" style="width:95px;"><span><i class="fa-solid fa-arrow-left" style="color: #000000;"></i> &nbsp;Enter</span></button>
+                      </div>
+                      <div class="my-1">
+                        <button class="btn btn-light s_btn1" style="width:118px; font-size:14px;"><span>Shift  &nbsp;<i class="fa-solid fa-arrow-up" style="color: #000000;"></i></span></button>
+                        <button class="btn btn-light s_btn1">Z</button>
+                        <button class="btn btn-light s_btn1">X</button>
+                        <button class="btn btn-light s_btn1">C</button>
+                        <button class="btn btn-light s_btn1">V</button>
+                        <button class="btn btn-light s_btn1">B</button>
+                        <button class="btn btn-light s_btn1">N</button>
+                        <button class="btn btn-light s_btn1">M</button>
+                        <button class="btn btn-light s_btn1 pt-0"><<br>,</button>
+                        <button class="btn btn-light s_btn1 pt-0">><br>.</button>
+                        <button class="btn btn-light s_btn1 pt-0">?<br>/</button>
+                        <button class="btn btn-light s_btn1" style="width:120px; font-size:14px;"><span>Shift  &nbsp;<i class="fa-solid fa-arrow-up" style="color: #000000;"></i></span></button>
+                      </div>
+                      <div class="my-1">
+                        <button class="btn btn-light s_btn1">ctrl</button>
+                        <button class="btn btn-light s_btn1">fn</button>
+                        <button class="btn btn-light s_btn1"><i class="fa-brands fa-windows" style="color: #000000;"></i></button>
+                        <button class="btn btn-light s_btn1">alt</button>
+                        <button class="btn btn-light s_btn1" style="width:296px;"></button>
+                        <button class="btn btn-light s_btn1">alt</button>
+                        <button class="btn btn-light s_btn1">ctrl</button>
+                        <button class="btn btn-light s_btn1"><i class="fa-solid fa-chevron-left" style="color: #000000;"></i></button>
+                        <button class="btn btn-light s_btn1 pt-0"><i class="fa-solid fa-chevron-up" style="color: #000000;"></i><br><i class="fa-solid fa-chevron-down" style="color: #000000;"></i></button>
+                        <!-- <span class="">
+                          <button class="btn btn-light s_btn1" style="height:20px;">K</button>
+                          <button class="btn btn-light s_btn1" style="height:20px;">K</button>
+                        </span> -->
+                        <button class="btn btn-light s_btn1"><i class="fa-solid fa-chevron-right" style="color: #000000;"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" s_hand s_h3333 mt-1 text-center position-relative">
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 280px;top:-3px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 320px;top:-22px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 357px;top:-1px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 400px;top:113px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 476px;top:106px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 537px;top:-1px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 580px;top:-22px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 623px;top:-1px;"></div>
+                    <div class="rounded-circle bg-danger a_circle position-absolute a_left_pinky" style="left: 665px;top:32px;"></div>
+                    <img class="img-fluid w-50 position-relative" style="bottom:70px !important;z-index:1000;" src="./img/hand1.png">
+                  </div>
+                </div>
+                <div class="col-3 h-100">
+                  <button type="button" class="btn-close border-0 float-end mt-2 shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="mt-5 m-0 a_welcome"></h5>
+                  <p class="fw-semibold mt-4">Time</p>
+                  <h1 class="display-1 fw-bold border-0 bg-transparent">03:00</h1>
+
+                  <button class="btn btn-sm btn-outline-success w-75 fw-semibold my-1 offset-22 bg-light">Next</button>
+                  <button class="btn btn-sm btn-outline-success w-75 fw-semibold my-1 offset-222 bg-light">Previous</button>
+
+                </div>
+            </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
