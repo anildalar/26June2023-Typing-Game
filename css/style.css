@@ -27,7 +27,7 @@
     height:154px;
 }
 .s_h333{
-    height:350px;
+    height:400px;
 }
 .s_h3333{
     height:156px;
@@ -50,7 +50,7 @@
     border-radius: 50%;
 }
 .a_keyboard{
-    transform: scale(1.2); 
+    transform: scale(1.4) translate(0px,50px);
 }
 .a_active{
     background-color: #c6c7c8;
